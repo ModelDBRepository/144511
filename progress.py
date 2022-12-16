@@ -3,7 +3,7 @@ import sys
 def update(count,total,id=0,width=50):
     if total == 0 or count % 10 > 0: return
     percent = 100*float(count)/total
-    print "["+str(int(id))+"] "+str(percent)
+    print("["+str(int(id))+"] "+str(percent))
 
 
 def updatebar(count,total,id=0,width=50):

@@ -21,7 +21,7 @@ class Simulation(object):
         self.poisson.poisson(amplitude)
 
     def set_stim(self):
-        if self.verbose: print "...Creating Stimuli"
+        if self.verbose: print("...Creating Stimuli")
         self.clamps = []
         for s in self.stim:
             for c in self.network.cells:
@@ -92,14 +92,14 @@ class Simulation(object):
                             self.clamps[-1].delay = self.delay+50+15
 
     def run(self):
-        if self.verbose: print "Initializing Simulation"
+        if self.verbose: print("Initializing Simulation")
         self.set_stim()
         neuron.h.dt = self.dt
         neuron.h.celsius = 36
         neuron.h.finitialize(-60)
         neuron.h.load_file('parcom.hoc')
         neuron.init()
-        if self.verbose: print "...Running Simulation"
+        if self.verbose: print("...Running Simulation")
         neuron.run(self.sim_time)
-        if self.verbose: print "...Simulation Complete\n"
+        if self.verbose: print("...Simulation Complete\n")
 

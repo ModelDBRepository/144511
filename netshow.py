@@ -79,7 +79,7 @@ def save_mean_spikes(network, section, param, filename):
                 for c in network.savedcells[s][section]:
                     dur = network.savedparams[s][1]
                     if dur not in stim: stim.append(dur)
-                    if dur not in mean[list_to_string(a)].keys(): mean[list_to_string(a)][dur] = []
+                    if dur not in list(mean[list_to_string(a)].keys()): mean[list_to_string(a)][dur] = []
                     mean[list_to_string(a)][dur].append(len(c['rec_s']))
 
     mean_sd = deepcopy(mean)
@@ -182,7 +182,7 @@ def save_spikes(network, section, param, filename, trials, diff=1):
         if network.savedparams[s][0] == param:
             for c in network.savedcells[s][section]:
                 dur = network.savedparams[s][1]
-                if dur not in count.keys(): count[dur] = 0
+                if dur not in list(count.keys()): count[dur] = 0
                 for spike in c['rec_s']:
                     out = str(spike)+","+str(dur+(float(count[dur])/trials)*diff*0.6+diff*0.3)
                     f.write(out+"\n")
@@ -202,7 +202,7 @@ def save_fsl(network, section, param, filename, trials):
                 for c in network.savedcells[s][section]:
                     dur = network.savedparams[s][1]
                     if dur not in stim: stim.append(dur)
-                    if dur not in fsl[list_to_string(a)].keys(): fsl[list_to_string(a)][dur] = []
+                    if dur not in list(fsl[list_to_string(a)].keys()): fsl[list_to_string(a)][dur] = []
                     if len(c['rec_s']) > 0: fsl[list_to_string(a)][dur].append(c['rec_s'][0])
 
     fsl_sd = deepcopy(fsl)
