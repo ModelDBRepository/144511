@@ -30,4 +30,5 @@ Aubie, B., Sayegh, R., & Faure, P. A. (2012). Duration Tuning across
 Vertebrates. Journal of Neuroscience, 32(18), 6373-6390.
 
 Changelog
+==========
 2022-12: Migrate to Python 3(via `2to3 -w .`)
