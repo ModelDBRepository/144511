@@ -75,7 +75,7 @@ total = len(stims)*len(param)*repeats
 pc = neuron.h.ParallelContext()
 numProcs = int(pc.nhost())
 if pc.id() == 0:
-    print "Running "+str(total)+ " simulations via "+str(numProcs)+" processes..."
+    print("Running "+str(total)+ " simulations via "+str(numProcs)+" processes...")
 ret = []
 pc.runworker()
 for i in range(numProcs):
@@ -83,7 +83,7 @@ for i in range(numProcs):
 while pc.working():
     ret.append(pc.pyret())
 pc.done()
-print "Simulation complete.  Post processing."
+print("Simulation complete.  Post processing.")
 
 # Combine all of the results together
 savedparams = []

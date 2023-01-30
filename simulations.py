@@ -328,8 +328,8 @@ def C_RAT(net,a,stim,getparams=False):
     # modifyAMPA/NMDA scale by total number of receptors so we multiply by 2 since we have 2 inputs
     net.cells["IC"]["cells"][0].sec["soma"].modifyAMPA(gmax=0.0030*2*mult)
     net.cells["IC"]["cells"][0].sec["soma"].modifyNMDA(gmax=0.012*2*mult,Beta=0.0066,mg=1.0)
-    net.cells["IC"]["cells"][0].sec["soma"].modifyGABAaRange(range(10), gmax=0.00080/10)
-    net.cells["IC"]["cells"][0].sec["soma"].modifyGABAaRange(range(10,20), gmax=0.0030/10) #0.00677
+    net.cells["IC"]["cells"][0].sec["soma"].modifyGABAaRange(list(range(10)), gmax=0.00080/10)
+    net.cells["IC"]["cells"][0].sec["soma"].modifyGABAaRange(list(range(10,20)), gmax=0.0030/10) #0.00677
 
     net.cells["IC"]["cells"][0].sec["soma"](0.5).pas.g = 1.0/10000
 
