@@ -25,8 +25,7 @@ Output files are CSV files suitable for producing graphs with many graphing prog
 Aubie, B., Sayegh, R., & Faure, P. A. (2012). Duration Tuning across Vertebrates. *Journal of Neuroscience*, 32(18), 6373-6390.
 
 ## Changelog  
-2022-12: Migrate to Python 3(via `2to3 -w .`)
 
----
+2022-12: Migrate to Python 3(via `2to3 -w .`)
 
 2025-07-09: Converted README to Markdown.
